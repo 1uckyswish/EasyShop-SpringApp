@@ -43,7 +43,7 @@ public class CategoriesController
     }
 
     // add the appropriate annotation for a get action
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     @PreAuthorize("permitAll()")
     public Category getById(@PathVariable int id)
     {
@@ -66,13 +66,13 @@ public class CategoriesController
     public List<Product> getProductsById(@PathVariable int categoryId)
     {
         // get a list of product by categoryId
-        return null;
+        return productDao.listByCategoryId(categoryId);
     }
 
     // add annotation to call this method for a POST action
     // add annotation to ensure that only an ADMIN can call this function
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.CREATED)
     public Category addCategory(@RequestBody Category category) {
         return categoryDao.create(category);
@@ -80,16 +80,19 @@ public class CategoriesController
 
     // add annotation to call this method for a PUT (update) action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
+    @PutMapping("{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public void updateCategory(@PathVariable int id, @RequestBody Category category)
     {
+        categoryDao.update(id, category);
         // update the category by id
     }
 
 
     // add annotation to call this method for a DELETE action - the url path must include the categoryId
     // add annotation to ensure that only an ADMIN can call this function
-    @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("{id}")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCategory(@PathVariable int id) {
         try {
