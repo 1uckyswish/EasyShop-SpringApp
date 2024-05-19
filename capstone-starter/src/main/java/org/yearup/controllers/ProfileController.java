@@ -15,6 +15,7 @@ import java.security.Principal;
 @RestController
 @RequestMapping("profile")
 @CrossOrigin
+@PreAuthorize("hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')")
 public class ProfileController {
     private ProfileDao profileDao;
     private UserDao userDao;
@@ -29,7 +30,7 @@ public class ProfileController {
 
 
     /*@GetMapping
-    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasRole('ROLE_USER')")
     public List<Profile> getAll(){
         try{
             return profileDao.getAll();
@@ -40,7 +41,7 @@ public class ProfileController {
     }*/
 
     @GetMapping()
-    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasRole('ROLE_USER')")
     public Profile getByUserID(Principal principal){
         try{
             String userName = principal.getName();
@@ -60,7 +61,7 @@ public class ProfileController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasRole('ROLE_USER')")
     public Profile createProfile(@RequestBody Profile profile){
         try{
             return profileDao.create(profile);
@@ -71,7 +72,7 @@ public class ProfileController {
     }
 
     @PutMapping
-    @PreAuthorize("hasRole('ROLE_USER')")
+//    @PreAuthorize("hasRole('ROLE_USER')")
     public void updateProduct(@RequestBody Profile profile, Principal principal){
         try{ String userName = principal.getName();
 
