@@ -51,11 +51,15 @@ public class MySqlOrdersDao extends MySqlDaoBase implements OrderDao {
                     while (cartItemsResultSet.next()) {
                         int productId = cartItemsResultSet.getInt("product_id");
                         int quantity = cartItemsResultSet.getInt("quantity");
+                        double price = getProductPriceFromDatabase(productId);
+
+                        // Calculate total price for the item
+                        double totalPrice = price * quantity;
 
                         // Insert into order_line_items
                         insertOrderLineItemStatement.setInt(1, orderId);
                         insertOrderLineItemStatement.setInt(2, productId);
-                        insertOrderLineItemStatement.setDouble(3, getProductPriceFromDatabase(productId)); // Retrieve product price
+                        insertOrderLineItemStatement.setDouble(3, totalPrice); // Use total price
                         insertOrderLineItemStatement.setInt(4, quantity);
                         insertOrderLineItemStatement.executeUpdate();
 
