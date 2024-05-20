@@ -18,7 +18,7 @@ The UI of the EasyShop E-Commerce Application was functional but lacked visual a
 #### After:
 Following comprehensive enhancements, the EasyShop E-Commerce Application now boasts an enriched UI experience. The layout is dynamic and user-friendly, featuring vibrant colors and modern design elements. Product images have been updated with high-quality, detailed visuals, enhancing the visual appeal of the store and elevating the overall shopping experience. Navigation is seamless and intuitive, ensuring users can easily browse and interact with the platform.
 
-<img width="1440" alt="Screenshot 2024-05-20 at 7 38 14 PM" src="https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/3f54fd27-f3ba-42a7-869f-b3ac0987e26e">
+<img width="1440" alt="Screenshot 2024-05-20 at 7 56 01 PM" src="https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/f8182587-6d58-43da-8021-3a5d9cd1b5a1">
 
 
 ## Features Implemented
