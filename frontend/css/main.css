@@ -56,7 +56,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
+  height: 15vh;
   padding: 5px 15px;
   border-bottom: solid 1px var(--bg-primary-focus);
   box-shadow: 5px 2px var(--bg-base-100);
@@ -65,7 +65,7 @@ header {
 }
 
 header img {
-width: 200px;
+width: 270px;
   height: 100%;
   object-fit: cover;
 }
@@ -125,8 +125,9 @@ main > .filter-box {
   background-color: var(--bg-primary);
 }
 
-.filter-box h3{
-color: #f4bebe;
+main > .filter-box h3{
+color: orange;
+font-size: 30px;
 }
 
 .form-label{
@@ -384,6 +385,13 @@ color:#5c5757;
   display: flex;
    width: 100%;
    justify-content: space-evenly;
+   margin: 20px 0;
+   align-text: center;
+}
+
+.product > .add-button button{
+height: 50px;
+font-size: 18px;
 }
 
 /* Add this to your stylesheet */
@@ -442,8 +450,10 @@ color:#5c5757;
 footer {
    background: white;
     padding: 20px 0;
-    border-top: 1px solid #dee2e6;
+    border-top: 5px solid black;
 }
+
+
 
 .footer p {
     margin-bottom: 0;
