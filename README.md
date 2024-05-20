@@ -7,15 +7,15 @@ Welcome to the EasyShop E-Commerce Application! This repository showcases the co
 In this project, I assumed the role of a backend developer for EasyShop's online store. The primary tasks included fixing bugs, implementing new features, and ensuring that the API is well-tested and functional. The backend server uses a Spring Boot API, and the data is managed in a MySQL database.
 
 
-### UI Enhancements: Before and After
+## UI Enhancements: Before and After
 
-#### Before:
+### Before:
 The UI of the EasyShop E-Commerce Application was functional but lacked visual appeal and user engagement. The layout was basic, and product images were limited in detail, hindering the overall shopping experience. Navigation was straightforward but lacked vibrancy and modern design elements.
 
 <img width="1280" alt="Screenshot 2024-05-18 at 10 44 21 PM" src="https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/54d34b5e-a043-45a7-bba8-63c4b4c92da8">
 
 
-#### After:
+### After:
 Following comprehensive enhancements, the EasyShop E-Commerce Application now boasts an enriched UI experience. The layout is dynamic and user-friendly, featuring vibrant colors and modern design elements. Product images have been updated with high-quality, detailed visuals, enhancing the visual appeal of the store and elevating the overall shopping experience. Navigation is seamless and intuitive, ensuring users can easily browse and interact with the platform.
 
 <img width="1440" alt="Screenshot 2024-05-20 at 7 56 01 PM" src="https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/f8182587-6d58-43da-8021-3a5d9cd1b5a1">
