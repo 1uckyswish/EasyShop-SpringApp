@@ -4,7 +4,6 @@
         <h4>{{name}}</h4>
         <div class="photo">
             <img src="/images/products/{{imageUrl}}" alt=""
-                 onclick="showImageDetailForm(`{{name}}`,'/images/products/{{imageUrl}}')"
             >
           <h4 class="price">${{price}}</h4>
         </div>
@@ -14,7 +13,8 @@
 
     </div>
     <div class="add-button">
-        <button class="btn btn-success" onclick="cartService.addToCart({{productId}})">Add to Cart</button>
+        <button class="btn btn-info" onclick="cartService.addToCart({{productId}})">Add to Cart</button>
+        <button class="btn btn-primary" onclick="showImageDetailForm(`{{name}}`,'/images/products/{{imageUrl}}')">View Details</button>
     </div>
 </div>
 {{/products}}
