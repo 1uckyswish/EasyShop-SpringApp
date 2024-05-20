@@ -25,21 +25,6 @@ public class ProfileController {
         this.userDao = userDao;
     }
 
-
-
-
-
-    /*@GetMapping
-//    @PreAuthorize("hasRole('ROLE_USER')")
-    public List<Profile> getAll(){
-        try{
-            return profileDao.getAll();
-        }
-        catch(Exception exception){
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops our bad");
-        }
-    }*/
-
     @GetMapping()
 //    @PreAuthorize("hasRole('ROLE_USER')")
     public Profile getByUserID(Principal principal){
