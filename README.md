@@ -52,7 +52,8 @@ Resolved issues with the search and filter functionality to ensure accurate resu
 - Ensured the search functionality operates as expected with diverse filter combinations.
 
 <img width="1440" alt="Screenshot 2024-05-20 at 7 35 03 PM" src="https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/9dfe5143-c408-42a8-8ef8-e0639465099b">
-![Screenshot 2024-05-20 at 7 35 32 PM](https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/c0de6338-9319-445d-a1ce-4513cd252fb5)
+
+![Screenshot 2024-05-20 at 7 35 32 PM](https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/4ec591ba-f7f9-4396-8f4d-5969ac905268)
 
 ### Product Duplication
 Eliminated product duplication issues:
