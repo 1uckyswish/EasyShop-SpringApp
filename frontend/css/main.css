@@ -431,9 +431,14 @@ font-size: 18px;
   flex-direction: column;
   align-items: flex-end;
   padding-top: 0.9px;
-  margin-top: 10px;
-  background-color: #eea0ab;
-  color: white;
+  margin-left: 35%;
+  margin-top: 15px;
+  background-color: #4aa8bf;
+  width: auto;
+  color: black;
+ text-align: center; /* Aligns text horizontally */
+ justify-content: center; /* Justifies content horizontally */
+
 }
 
 #errors > div {
@@ -467,3 +472,6 @@ footer {
 .footer ul li:first-child {
     margin-left: 0;
 }
+
+
+

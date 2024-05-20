@@ -1,4 +1,3 @@
-
 {{#loggedin}}
 <div id="links">
     <img src="/images/logo.png" alt="eashshop logo">
@@ -25,6 +24,7 @@
     </div>
 </div>
 {{/loggedin}}
+
 {{#loggedout}}
 <div id="links">
     <img src="/images/logo.png" alt="eashshop logo">
@@ -34,4 +34,11 @@
 <div>
     <a href="#"  onclick="showLoginForm();return false;">login</a>
 </div>
+
+<div>
+    <a href="#" onclick="showRegisterForm();return false;">register</a>
+</div>
+
+
+<!-- End Registration Modal -->
 {{/loggedout}}

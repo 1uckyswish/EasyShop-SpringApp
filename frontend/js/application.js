@@ -4,10 +4,20 @@ function showLoginForm()
     templateBuilder.build('login-form', {}, 'login');
 }
 
+function showRegisterForm()
+{
+    templateBuilder.build('registration-form', {}, 'register');
+}
+
 function hideModalForm()
 {
     templateBuilder.clear('login');
 }
+
+function hideModalForm2() {
+    templateBuilder.clear('register');
+}
+
 
 function login()
 {
@@ -121,6 +131,29 @@ function closeError(control)
         control.click();
     },3000);
 }
+
+
+function register() {
+    const username = document.getElementById("reg-username").value;
+    const password = document.getElementById("reg-password").value;
+    const confirmPassword = document.getElementById("reg-confirm-password").value;
+
+    userService.register(username, password, confirmPassword, (user) => {
+        // Registration successful
+        // Hide the registration modal
+        hideModalForm2(); // This should close the registration modal
+    }, (error) => {
+        // Registration failed
+        console.error('Registration failed:', error);
+        // You can display an error message to the user if needed
+    });
+}
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
 

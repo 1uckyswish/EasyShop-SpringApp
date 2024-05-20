@@ -20,6 +20,29 @@ class UserService {
         return {};
     }
 
+    register(username, password, confirmPassword) {
+            const url = `${config.baseUrl}/register`;
+            const registerData = {
+                username: username,
+                password: password,
+                confirmPassword: confirmPassword,
+                role: 'USER'
+            };
+
+            axios.post(url, registerData)
+                .then(response => {
+                    // Registration successful
+                    // Optionally, you can automatically log in the user here
+                    // Example:
+                    // this.login(username, password);
+                    console.log("Registration successful:", response.data);
+                })
+                .catch(error => {
+                    // Registration failed
+                    console.error("Registration failed:", error);
+                });
+        }
+
     saveUser(user)
     {
         this.currentUser = {
@@ -81,29 +104,46 @@ class UserService {
         templateBuilder.build('header', user, 'header-user');
     }
 
-    register (username, password, confirm)
-    {
-        const url = `${config.baseUrl}/register`;
-        const register = {
-            username: username,
-            password: password,
-            confirmPassword: confirm,
-            role: 'USER'
-        };
-
-        axios.post(url, register)
-             .then(response => {
-                 console.log(response.data)
-             })
-            .catch(error => {
-
+    register(username, password, confirmPassword) {
+            // Check if passwords match
+            if (password !== confirmPassword) {
                 const data = {
-                    error: "User registration failed."
+                    error: "Passwords do not match"
                 };
+                templateBuilder.append("error", data, "errors");
+                return; // Exit the function without registering the user
+            }
 
-                templateBuilder.append("error", data, "errors")
-            });
-    }
+            // Proceed with user registration if passwords match
+            const url = `${config.baseUrl}/register`;
+            const registerData = {
+                username: username,
+                password: password,
+                confirmPassword: confirmPassword,
+                role: 'USER'
+            };
+
+            axios.post(url, registerData)
+                .then(response => {
+                    // Registration successful
+                    // Optionally, you can automatically log in the user here
+                    // Example:
+                    // this.login(username, password);
+                    console.log("Registration successful:", response.data);
+                    const data = {
+                                           error: "User registration successful. Please log in now."
+                                        };
+                                        templateBuilder.append("error", data, "errors");
+                })
+                .catch(error => {
+                    // Registration failed
+                    console.error("Registration failed:", error);
+                    const data = {
+                        error: "User registration failed."
+                    };
+                    templateBuilder.append("error", data, "errors");
+                });
+        }
 
     login (username, password)
     {
