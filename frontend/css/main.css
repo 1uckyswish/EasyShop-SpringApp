@@ -105,7 +105,7 @@ header .cart {
 
 header .cart #cart-items {
   font-size: .7em;
-  height: 50%;
+  height: 30%;
   align-items: start;
   padding-left: 5px;
   color:#5a7c65;
