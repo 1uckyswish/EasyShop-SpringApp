@@ -141,5 +141,13 @@ During the final presentation, I demonstrated the project by:
 
 
 
+### Interesting Piece of Code: Frontend Development
+
+In this project, I leveraged my frontend developer skills and experience to enhance the user interface of the EasyShop E-Commerce Application. Using HTML, Bootstrap JS, and CSS, I revamped the frontend to create a visually appealing and user-friendly experience. One notable aspect of this implementation is the integration of a new color scheme, which adds vibrancy and modernity to the UI.
+
+Additionally, I utilized DOM manipulation techniques to seamlessly populate the frontend with data from the backend API routes. This allowed for dynamic content generation, ensuring that users receive up-to-date information about products and categories as they interact with the application.
+
+![Screenshot 2024-05-20 at 7 53 51 PM](https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/7baba4b1-590b-4a47-b4f5-25667bcd1f26)
+![Screenshot 2024-05-20 at 7 54 13 PM](https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/5a049199-e9ec-40e0-a6b4-88dbb4460e1d)
 
 
