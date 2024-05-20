@@ -76,10 +76,6 @@ loadCartPage() {
     const main = document.getElementById("main");
     main.innerHTML = "";
 
-//    let div = document.createElement("div");
-//    div.classList = "filter-box";
-//    main.appendChild(div);
-
     const contentDiv = document.createElement("div");
     contentDiv.id = "content";
     contentDiv.classList.add("content-form");
@@ -109,9 +105,9 @@ loadCartPage() {
         if (userService.isLoggedIn()) {
             const userId = userService.currentUser.userId;
             // Clear the cart first
-            cartService.clearCart();
+            this.clearCart();
             // Then checkout orders
-            cartService.checkoutOrders(userId);
+            this.checkoutOrders(userId);
         }
     });
 
@@ -121,13 +117,18 @@ loadCartPage() {
     }
 
     cartHeader.appendChild(clearButton2);
-
     contentDiv.appendChild(cartHeader);
     main.appendChild(contentDiv);
 
-    this.cart.items.forEach(item => {
-        this.buildItem(item, contentDiv);
-    });
+    if (this.cart.items.length === 0) {
+        const emptyMessage = document.createElement("p");
+        emptyMessage.innerText = "Sorry, no items in cart";
+        contentDiv.appendChild(emptyMessage);
+    } else {
+        this.cart.items.forEach(item => {
+            this.buildItem(item, contentDiv);
+        });
+    }
 }
 
     buildItem(item, parent) {
