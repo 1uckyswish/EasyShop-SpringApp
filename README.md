@@ -2,25 +2,7 @@
 
 ## Overview
 
-Welcome to the EasyShop E-Commerce Application! This repository showcases the comprehensive enhancements and upgrades I made to an existing e-commerce platform's backend. Built with Spring Boot and MySQL, the application now features robust functionality, crucial bug fixes, and several new features that improve user experience and application performance.
-
-## Table of Contents
-
-- [Project Description](#project-description)
-- [Features Implemented](#features-implemented)
-  - [Categories Management](#categories-management)
-  - [Products Management](#products-management)
-- [Bug Fixes](#bug-fixes)
-  - [Search and Filter Functionality](#search-and-filter-functionality)
-  - [Product Duplication](#product-duplication)
-- [New Features](#new-features)
-  - [Shopping Cart](#shopping-cart)
-  - [User Profile](#user-profile)
-- [API Endpoints](#api-endpoints)
-- [Testing](#testing)
-- [Demo](#demo)
-
-## Project Description
+Welcome to the EasyShop E-Commerce Application! This repository showcases the comprehensive enhancements and upgrades I made to an existing e-commerce platform's backend. Built with Spring Boot and MySQL, the application now features robust functionality, crucial bug fixes, and several new features that improve user experience and application performance. Additionally, I have added an enhanced, user-friendly UI that is vibrant and engaging, along with new detailed images of products to improve the store's visual appeal and help boost sales.
 
 In this project, I assumed the role of a backend developer for EasyShop's online store. The primary tasks included fixing bugs, implementing new features, and ensuring that the API is well-tested and functional. The backend server uses a Spring Boot API, and the data is managed in a MySQL database.
 
