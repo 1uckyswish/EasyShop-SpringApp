@@ -19,13 +19,12 @@ function hideModalForm2() {
 }
 
 
-function login()
-{
+function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     userService.login(username, password);
-    hideModalForm()
+    hideModalForm(); // Hide the login modal after updating the button
 }
 
 function showImageDetailForm(product, imageUrl)
@@ -38,18 +37,46 @@ function showImageDetailForm(product, imageUrl)
     templateBuilder.build('image-detail',imageDetail,'login')
 }
 
-function loadHome()
-{
-    templateBuilder.build('home',{},'main')
+function createAdminButton() {
+    if (userService.isLoggedIn() && userService.getCurrentUser().username === "admin") {
+        // Check if the "make product" button already exists
+        const existingButton = document.getElementById("adminButton");
+        if (!existingButton) {
+            // Create the "make product" button dynamically
+            const adminButton = document.createElement("a");
+            adminButton.href = "product.html";
+            adminButton.id = "adminButton";
+            adminButton.textContent = "Make Product";
 
+            // Find the div where you want to append the button
+            const linksDiv = document.getElementById("links");
+
+            // Append the button to the div
+            linksDiv.appendChild(adminButton);
+        }
+    }
+}
+
+function loadHome() {
+    templateBuilder.build('home', {}, 'main');
     productService.search();
     categoryService.getAllCategories(loadCategories);
+
+    // Create the admin button
+    createAdminButton();
 }
 
-function editProfile()
-{
+function editProfile() {
     profileService.loadProfile();
+    createAdminButton();
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    userService = new UserService();
+    userService.setHeaderLogin();
+    loadHome();
+});
+
 
 function saveProfile()
 {
@@ -76,10 +103,10 @@ function saveProfile()
     profileService.updateProfile(profile);
 }
 
-function showCart()
-{
+function showCart() {
     cartService.loadCartPage();
 }
+
 
 function clearCart()
 {
@@ -149,13 +176,3 @@ function register() {
     });
 }
 
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    loadHome();
-});
