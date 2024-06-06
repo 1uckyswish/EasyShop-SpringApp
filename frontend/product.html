@@ -60,42 +60,50 @@
 
 <script>
     document.getElementById("productForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); // Prevent the default form submission
 
-        const form = event.target;
-        const formData = new FormData(form); // Get form data
+    const form = event.target;
+    const formData = new FormData(form); // Get form data
 
-        // Convert form data to JSON object
-        const jsonObject = {};
-        formData.forEach(function(value, key) {
-            jsonObject[key] = value;
-        });
-
-        // Make POST request
-        fetch(form.action, {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${document.getElementById('token').value}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(jsonObject)
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log('Product added successfully:', data);
-                window.location.href = 'index.html';
-                // Optionally, you can redirect to another page or show a success message here
-            })
-            .catch(error => {
-                console.error('There was a problem adding the product:', error);
-                // Optionally, you can show an error message to the user here
-            });
+    // Convert form data to JSON object
+    const jsonObject = {};
+    formData.forEach(function(value, key) {
+        jsonObject[key] = value;
     });
+
+    // Validate if the token is present and valid
+    const token = document.getElementById('token').value;
+    if (!token) {
+        console.error("Authorization token is missing or invalid.");
+        return;
+    }
+
+    // Make POST request
+    fetch(form.action, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jsonObject)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Product added successfully:', data);
+        window.location.href = 'index.html';
+        // Optionally, you can redirect to another page or show a success message here
+    })
+    .catch(error => {
+        console.error('There was a problem adding the product:', error);
+        // Optionally, you can show an error message to the user here
+    });
+});
+
 </script>
 </body>
 </html>
