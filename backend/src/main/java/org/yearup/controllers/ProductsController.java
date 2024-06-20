@@ -61,17 +61,16 @@ public class ProductsController
         }
     }
 
+
     @PostMapping()
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public Product addProduct(@RequestBody Product product)
-    {
-        try
-        {
+    @PreAuthorize("permitAll()")
+    public Product addProduct(@RequestBody Product product) {
+        System.out.println("Received product: " + product);
+        try {
             return productDao.create(product);
-        }
-        catch(Exception ex)
-        {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Oops... our bad.");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error creating product: " + ex.getMessage());
         }
     }
 
