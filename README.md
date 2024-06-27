@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://github.com/1uckyswish/EasyShop-SpringApp/assets/107442415/f5a46773-0092-426b-881e-26fcb88835c2" alt="Shopping colorful shopping bag illustration" width="450">
+</p>
+
 # EasyShop E-Commerce Application
 
 ## Overview
